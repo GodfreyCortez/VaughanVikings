@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Vikings.PlayerAssignPage">
+    
+    <!--This page is where the person will choose the player they wish to assign to the field-->
+    <TableView Intent="Settings">
+        <TableRoot>
+            <TableSection Title = "Choose the Position">
+                <SwitchCell On="{Binding Pitcher}" Text = "Pitcher"  x:Name="switchPitch"></SwitchCell>
+                <SwitchCell On="{Binding Catcher}" Text = "Catcher"  x:Name="switchCatcher" ></SwitchCell>
+                <SwitchCell On="{Binding SS}" Text = "Short Stop"  x:Name="switchSS" ></SwitchCell>
+                <SwitchCell On="{Binding Base1}" Text = "1st Base"  x:Name="switchBase1" ></SwitchCell>
+                <SwitchCell On="{Binding Base2}" Text = "2nd Base"  x:Name="switchBase2" ></SwitchCell>
+                <SwitchCell On="{Binding Base3}"  Text = "3rd Base"  x:Name="switchBase3" ></SwitchCell>
+                <SwitchCell On="{Binding LF}" Text = "Left Field"  x:Name="switchLF" ></SwitchCell>
+                <SwitchCell On="{Binding CF}" Text = "Center Field"  x:Name="switchCF" ></SwitchCell>
+                <SwitchCell On="{Binding RF}"  Text = "Right Field"  x:Name="switchRF" ></SwitchCell>
+                <SwitchCell On="{Binding Bench}" Text="Bench" x:Name="switchBench" ></SwitchCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
