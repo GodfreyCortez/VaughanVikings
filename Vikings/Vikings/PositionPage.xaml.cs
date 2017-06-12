@@ -178,17 +178,20 @@ namespace Vikings
                 var today = DateTime.Today.ToString("D") +" "+ DateTime.Now.ToString("h:mm tt");
                 var NewGame = new Game();
                 NewGame.Date = today;
-                RecapPage.AddGame(NewGame);
-
+                await connection.CreateTableAsync<Game>();
+                await connection.InsertAsync(NewGame);
                 foreach (var player in positionsCollection)
                 {
                     var newPlayer = player.CopyFrom();
                     newPlayer.Date = today;
+                    if (String.IsNullOrWhiteSpace(newPlayer.Position))
+                        newPlayer.Position = "Not Assigned";
                 }
                 
                 next.Text = "Next";
                 Title = $"Inning {ID}";
                 await connection.InsertAllAsync(positionsCollection);
+
                 await DisplayAlert("Saved!", "Check out previous games in the recaps page", "Okay");
                 await LoadData();
             }

@@ -352,16 +352,16 @@ namespace Vikings
             }
         }
 
-        private bool bench;
-        public bool Bench
+        private bool off;
+        public bool Off
         {
             get
             {
-                return bench;
+                return off;
             }
             set
             {
-                bench = value;
+                off = value;
                 OnPropertyChanged();
             }
         }

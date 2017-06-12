@@ -39,7 +39,7 @@ namespace Vikings
             switchLF.OnChanged += OnChangedSwitch;
             switchCF.OnChanged += OnChangedSwitch;
             switchRF.OnChanged += OnChangedSwitch;
-            switchBench.OnChanged += OnChangedSwitch;
+            switchOff.OnChanged += OnChangedSwitch;
             base.OnAppearing();
         }
 
@@ -54,7 +54,7 @@ namespace Vikings
             switchLF.OnChanged -= OnChangedSwitch;
             switchCF.OnChanged -= OnChangedSwitch;
             switchRF.OnChanged -= OnChangedSwitch;
-            switchBench.OnChanged -= OnChangedSwitch;
+            switchOff.OnChanged -= OnChangedSwitch;
             base.OnDisappearing();
         }
 
@@ -93,7 +93,7 @@ namespace Vikings
             else if (!switcher.Equals(switchRF) && player.RF)
                 return true;
 
-            else if (!switcher.Equals(switchBench) && player.Bench)
+            else if (!switcher.Equals(switchOff) && player.Off)
                 return true;
             
             return false;
@@ -290,9 +290,9 @@ namespace Vikings
                         player.Position = "Right Field";
                         player.PositionRF = (positionCounter + 1);
                     }
-                    else if (switchObject.Equals(switchBench))
+                    else if (switchObject.Equals(switchOff))
                     {
-                        player.Position = "Bench";
+                        player.Position = "Off";
                     }
                     await Navigation.PopAsync();
                     return;

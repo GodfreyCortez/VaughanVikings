@@ -2,7 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Vikings.AboutPage"
+             BackgroundColor="#00214e"
              Padding="5, 20, 5, 5">
-    <Label HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Start"
-           Text="This app was developed by Giordana Provenzano and Godfrey Cortez of G^2. This software is not meant for resale and to be used solely for the Vaughan Vikings Baseball Team."></Label>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Image Source="Vikings.png" Aspect="AspectFit"></Image>
+        <Label  HorizontalTextAlignment="Start" Margin="20" TextColor="White"
+                Text="This app was developed by Giordana Provenzano and Godfrey Cortez of G^2. This software is not meant for resale and to be used solely for the Vaughan Vikings Baseball Team."></Label>
+    </StackLayout>
 </ContentPage>

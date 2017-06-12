@@ -4,8 +4,20 @@
              xmlns:local="clr-namespace:Vikings"
              x:Class="Vikings.PositionPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="prev" Text="Prev" Clicked="OnPrev"></ToolbarItem>
-        <ToolbarItem x:Name="next" Text="Next" Clicked="OnNext"></ToolbarItem>
+        <ToolbarItem x:Name="prev" Text="Prev" Clicked="OnPrev">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            Android="left.png"
+                            WinPhone="left_black.png"></OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem x:Name="next" Text="Next" Clicked="OnNext">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            Android="right.png"
+                            WinPhone="right_black.png"></OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ListView x:Name="positionList" ItemSelected="OnPositionSelected" >
         <ListView.ItemTemplate>

@@ -16,7 +16,7 @@
                 <SwitchCell On="{Binding LF}" Text = "Left Field"  x:Name="switchLF" ></SwitchCell>
                 <SwitchCell On="{Binding CF}" Text = "Center Field"  x:Name="switchCF" ></SwitchCell>
                 <SwitchCell On="{Binding RF}"  Text = "Right Field"  x:Name="switchRF" ></SwitchCell>
-                <SwitchCell On="{Binding Bench}" Text="Bench" x:Name="switchBench" ></SwitchCell>
+                <SwitchCell On="{Binding Off}" Text="Off" x:Name="switchOff" ></SwitchCell>
             </TableSection>
         </TableRoot>
     </TableView>

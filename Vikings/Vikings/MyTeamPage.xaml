@@ -4,7 +4,15 @@
              x:Class="Vikings.MyTeamPage"
              Title="My Team">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Icon="plus.png" Clicked="OnAdd"></ToolbarItem>
+        <ToolbarItem Text="Add" Clicked="OnAdd">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            iOS="plus.png"
+                            Android="plus_white.png"
+                            WinPhone="plus.png"></OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        
     </ContentPage.ToolbarItems>
     <ListView x:Name="playerList" ItemSelected="OnPlayerSelected">
         <ListView.ItemTemplate>

@@ -29,7 +29,11 @@ namespace Vikings
             page.Title = item.Title;
 
             Detail = new NavigationPage(page);
-            IsPresented = false;
+
+            if (Device.RuntimePlatform == Device.Windows)
+                IsPresented = true;
+            else
+                IsPresented = false;
 
             MasterPage.ListView.SelectedItem = null;
         }

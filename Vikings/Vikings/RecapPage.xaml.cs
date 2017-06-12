@@ -13,9 +13,7 @@ namespace Vikings
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RecapPage : ContentPage
-    {
-        private bool isDataLoaded;
-        
+    {     
         private static ObservableCollection<Game> Games; 
         private static SQLiteAsyncConnection connection;
 
@@ -28,12 +26,7 @@ namespace Vikings
         }
 
         protected async override void OnAppearing() //when we initialize we must create a sort of filter
-        {
-            if (isDataLoaded)
-                return;
-
-            isDataLoaded = true;
-
+        { 
             await LoadData();
 
             base.OnAppearing();
@@ -43,18 +36,9 @@ namespace Vikings
         {
             await connection.CreateTableAsync<Game>();
 
-            if (Games == null) //check if any of our collections are null
-                Games = new ObservableCollection<Game>(await connection.Table<Game>().ToListAsync());
+            Games = new ObservableCollection<Game>(await connection.Table<Game>().ToListAsync());
 
             GamesList.ItemsSource = Games;
-        }
-
-        public static async void AddGame(Game today)
-        {
-            connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-            await connection.CreateTableAsync<Game>();
-
-            await connection.InsertAsync(today);
         }
 
         async void OnDelete(object sender, System.EventArgs e)
